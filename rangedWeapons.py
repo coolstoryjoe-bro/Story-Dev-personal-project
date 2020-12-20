@@ -24,12 +24,13 @@ class longBow(rangedWeapons):
                 if self.status_effect.values() == [1] or self.status_effect.values() == [2] \
                         or self.status_effect.values() == [3] or self.status_effect.values() == [4] \
                         or self.status_effect.values() == [5] or self.status_effect.values() == [6]:
-                    print(f"You don't have any status effecting arrows. You will use a regular arrow instead!")
                     print(f"You have used {self.status}")
+                    break
+                elif self.status_effect.values() == {}:
+                    print(f"You don't have any status effecting arrows. You will use a regular arrow instead!")
                     break
         elif self.arrow_vary.lower() == 'no' or self.arrow_vary.upper() == 'NO' or self.arrow_vary.title() == 'No':
             print(f"You have used a regular arrow and have done {self.attack_dmg} damage!")
-
 
 
 class shortBow(rangedWeapons):
@@ -48,8 +49,10 @@ class shortBow(rangedWeapons):
                 if self.status_effect.values() == [1] or self.status_effect.values() == [2] \
                         or self.status_effect.values() == [3] or self.status_effect.values() == [4] \
                         or self.status_effect.values() == [5] or self.status_effect.values() == [6]:
-                    print(f"You don't have any status effecting arrows. You will use a regular arrow instead!")
                     print(f"You have used {self.status}")
+                    break
+                elif self.status_effect.values() == {}:
+                    print(f"You don't have any status effecting arrows. You will use a regular arrow instead!")
                     break
         elif self.arrow_vary.lower() == 'no' or self.arrow_vary.upper() == 'NO' or self.arrow_vary.title() == 'No':
             print(f"You have used a regular arrow and have done {self.attack_dmg} damage!")
@@ -71,8 +74,10 @@ class crossBow(rangedWeapons):
                 if self.status_effect.values() == [1] or self.status_effect.values() == [2] \
                         or self.status_effect.values() == [3] or self.status_effect.values() == [4] \
                         or self.status_effect.values() == [5] or self.status_effect.values() == [6]:
-                    print(f"You don't have any status effecting arrows. You will use a regular arrow instead!")
                     print(f"You have used {self.status}")
+                    break
+                elif self.status_effect.values() == {}:
+                    print(f"You don't have any status effecting arrows. You will use a regular arrow instead!")
                     break
         elif self.arrow_vary.lower() == 'no' or self.arrow_vary.upper() == 'NO' or self.arrow_vary.title() == 'No':
             print(f"You have used a regular arrow and have done {self.attack_dmg} damage!")
@@ -105,8 +110,10 @@ class musket(rangedWeapons):
                 if self.status_effect.values() == [1] or self.status_effect.values() == [2] \
                         or self.status_effect.values() == [3] or self.status_effect.values() == [4] \
                         or self.status_effect.values() == [5] or self.status_effect.values() == [6]:
-                    print(f"You don't have any status effecting bullets. You will use a regular bullet instead!")
                     print(f"You have used {self.status}")
+                    break
+                elif self.status_effect.values() == {}:
+                    print(f"You don't have any status effecting bullets. You will use a regular bullet instead!")
                     break
         elif self.bullet_vary.lower() == 'no' or self.bullet_vary.upper() == 'NO' or self.bullet_vary.title() == 'No':
             print(f"You have used a regular bullet and have done {self.attack_dmg} damage!")
