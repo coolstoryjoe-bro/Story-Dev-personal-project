@@ -1,12 +1,17 @@
 # This is a casual route story:
 # Chapter 1 project Dev:
+
 # TODO: Change player inventory to a dictionary with weapon classes and item classes.
 # TODO: Review the code to include player inventory dictionary.
 
-from passiveDamage import passiveDamage
-
+# Import the passiveDamage class module which contains all the passive damages to the player character.
+import passiveDamage
+# Import the available options for chapter 1.
 import Options1
+# Import all the cqcWeapons of chapter 1.
+import cqcWeapons
 
+# This is where the user inputs their data to be saved onto lists and dictionaries.
 input_gender = input("Enter your gender: ")
 input_fname = input("Enter your first name: ")
 input_lname = input("Enter your last name: ")
@@ -15,6 +20,7 @@ gender = []
 player_name = input_fname
 player_lname = input_lname
 
+#This contains the player name and gender along with the inventory and status.
 player_0 = [gender, player_name]
 player_inventory = []
 player_status = {}
@@ -23,7 +29,7 @@ gender.append(input_gender)
 # These are the player options throughout chapter 1:
 # Each option is different according to the story and what the player chooses.
 
-
+#This the the player class which contains the player health and number statistics.
 class player:
     def __init__(self):
         self.player = player_0
@@ -43,146 +49,25 @@ class playerStatus(player):
         """Initialize attributes of the parent class."""
         super().__init__(player, health, defense, player_hitrate)
 
-class passiveDamage(player):
-    """This class described the passive damage the player gets."""
-    def __init__(self, poison, blunt, slash, burning, freezing, electric, random):
-        self.poison = poison
-        self.burning = burning
-        self.freezing = freezing
-        self.electric = electric
-        self.random = random
-
-    def poison_damage(self):
-        print("You have been poisoned.")
-        timer_poison = 0
-        poison_dmg = 2
-        while timer_poison <= 7:
-            timer_poison += 1
-            poison_dmg -= self.health
-            continue
-
-    def burning_damage(self):
-        print("You are suffering from burning. ")
-        timer_burning = 0
-        burning_dmg = 5
-        while timer_burning <= 5:
-            timer_burning += 1
-            burning_dmg -= self.health
-            continue
-
-    def freezing_damage(self):
-        print("You are currently freezing. ")
-        timer_freezing = 0
-        freezing_dmg = 5
-        while timer_freezing <= 3:
-            timer_freezing += 1
-            freezing_dmg -= self.health
-            continue
-        freezing_slow = 2
-        freezing_slow -= self.player_hitrate
-
-    def electric_damage(self):
-        print("You are suffering from electrical currents. ")
-        timer_electric = 0
-        electric_dmg = 3
-        while timer_electric <= 5:
-            timer_electric += 1
-            electric_dmg -= self.health
-            continue
-
-
+# A short list of the CQC weapons that i've listed in chapter one.
 CQC_Weapons = ['longsword', 'mace', 'shortsword', 'dagger', 'punches', 'kicks', 'kitchenknife', 'treebranch', 'pan',
                'stick', 'rock', 'staff', 'random',]
 
-class cqcWeapons:
-    def __init__(self, base_damage, base_durability, base_hitrate):
-        self.base_damage = base_damage
-        self.base_durability = base_durability
-        self.base_hitrate = base_hitrate
-        base_damage = 1
-        base_durability = 100
-        base_hitrate = 1
-
-class longSword(cqcWeapons):
-    """Status for longsword"""
-    def __init__(self, base_damage, base_durability, base_hitrate):
-        super().__init__(base_damage, base_durability, base_hitrate)
-
-        self.longSword_dmg = 25
-
-    def use_longSword(self):
-        total_dmgLS = self.longSword_dmg
-        print("You have done 25 damage!")
-
-class mace(cqcWeapons):
-    """Status for mace"""
-    def __init__(self, base_damage, base_durability, base_hitrate):
-        super().__init__(base_damage, base_durability, base_hitrate)
-
-class shortSword(cqcWeapons):
-    """Status for shortSword. """
-    def __init__(self, base_damage, base_durability, base_hitrate):
-        super().__init__(base_damage, base_durability, base_hitrate)
-
-class dagger(cqcWeapons):
-    """Status for dagger"""
-    def __init__(self, base_damage, base_durability, base_hitrate):
-        super().__init__(base_damage, base_durability, base_hitrate)
-
-class punches(cqcWeapons):
-    """Status for punches. """
-    def __init__(self, base_damage, base_durability, base_hitrate):
-        super().__init__(base_damage, base_durability, base_hitrate)
-
-class kicks(cqcWeapons):
-    """Status for kicks. """
-    def __init__(self, base_damage, base_durability, base_hitrate):
-        super().__init__(base_damage, base_durability, base_hitrate)
-
-class kitchenKnife(cqcWeapons):
-    """Status for kitchenKnife. """
-    def __init__(self, base_damage, base_durability, base_hitrate):
-        super().__init__(base_damage, base_durability, base_hitrate)
-
-class treeBranch(cqcWeapons):
-    """Status for treeBranch. """
-    def __init__(self, base_damage, base_durability, base_hitrate):
-        super().__init__(base_damage, base_durability, base_hitrate)
-
-class pan(cqcWeapons):
-    """Status for pan"""
-    def __init__(self, base_damage, base_durability, base_hitrate):
-        super().__init__(base_damage, base_durability, base_hitrate)
-
-class stick(cqcWeapons):
-    """Status for stick. """
-    def __init__(self, base_damage, base_durability, base_hitrate):
-        super().__init__(base_damage, base_durability, base_hitrate)
-
-class rock(cqcWeapons):
-    """Status for rock. """
-    def __init__(self, base_damage, base_durability, base_hitrate):
-        super().__init__(base_damage, base_durability, base_hitrate)
-
-class staff(cqcWeapons):
-    """Status for staff. """
-    def __init__(self, base_damage, base_durability, base_hitrate):
-        super().__init__(base_damage, base_durability, base_hitrate)
-
-class random(cqcWeapons):
-    """Status for random. """
-    def __init__(self, base_damage, base_durability, base_hitrate):
-        super().__init__(base_damage, base_durability, base_hitrate)
-
+# A short list of the ranged weapons that i've listed in chapter one.
 ranged_weapons = ['longbow', 'shortbow', 'crossbow', 'thrownrock', 'musket',]
 
 class rangedWeapons:
-    def __init__(self, longbow, shortbow, crossbow, thrownrock, musket):
-        self.longbow = longbow
-        self.shortbow = shortbow
-        self.crossbow = crossbow
-        self.thrownrock = thrownrock
-        self.musket = musket
+    def __init__(self):
+        self.attack_dmg = 1
+        self.attack_range = 115
+        self.attack_rate = 1
+        self.status_effect = []
+
+
+class longBow(rangedWeapons):
+
+
+
 
 class defensiveItems:
     def __init__(self, woodenshield, shortshield, tallshield, leatherarmor,
