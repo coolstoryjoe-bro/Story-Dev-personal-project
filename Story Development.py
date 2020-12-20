@@ -10,6 +10,8 @@ import passiveDamage
 import Options1
 # Import all the cqcWeapons of chapter 1.
 import cqcWeapons
+# Import all ranged Weapons of chapter 1.
+import rangedWeapons
 
 # This is where the user inputs their data to be saved onto lists and dictionaries.
 input_gender = input("Enter your gender: ")
@@ -55,19 +57,6 @@ CQC_Weapons = ['longsword', 'mace', 'shortsword', 'dagger', 'punches', 'kicks', 
 
 # A short list of the ranged weapons that i've listed in chapter one.
 ranged_weapons = ['longbow', 'shortbow', 'crossbow', 'thrownrock', 'musket',]
-
-class rangedWeapons:
-    def __init__(self):
-        self.attack_dmg = 1
-        self.attack_range = 115
-        self.attack_rate = 1
-        self.status_effect = []
-
-
-class longBow(rangedWeapons):
-
-
-
 
 class defensiveItems:
     def __init__(self, woodenshield, shortshield, tallshield, leatherarmor,
