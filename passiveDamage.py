@@ -1,4 +1,4 @@
-class passiveDamage(player):
+class passiveDamage():
     """This class described the passive damage the player gets."""
     def __init__(self, poison, blunt, slash, burning, freezing, electric, random):
         self.poison = poison
