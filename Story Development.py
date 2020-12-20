@@ -12,6 +12,12 @@ import Options1
 import cqcWeapons
 # Import all ranged Weapons of chapter 1.
 import rangedWeapons
+# Import all defensive Items of chapter 1.
+import defensiveItems
+# Import all magic types of chapter 1.
+import magic
+# Import the value of items in chapter 1.
+import itemValues
 
 # This is where the user inputs their data to be saved onto lists and dictionaries.
 input_gender = input("Enter your gender: ")
@@ -35,8 +41,8 @@ gender.append(input_gender)
 class player:
     def __init__(self):
         self.player = player_0
-        self.health = 100
-        self.defense = 10
+        self.player_health = 100
+        self.player_defense = 10
         self.player_hitrate = 10
 
 class playerCondition(player):
@@ -58,60 +64,6 @@ CQC_Weapons = ['longsword', 'mace', 'shortsword', 'dagger', 'punches', 'kicks', 
 # A short list of the ranged weapons that i've listed in chapter one.
 ranged_weapons = ['longbow', 'shortbow', 'crossbow', 'thrownrock', 'musket',]
 
-class defensiveItems:
-    def __init__(self, woodenshield, shortshield, tallshield, leatherarmor,
-                 chainmail, ironarmor, chainarmor):
-        self.woodenshield = woodenshield
-        self.shortshield = shortshield
-        self.tallshield = tallshield
-        self.leatherarmor = leatherarmor
-        self.chainmail = chainmail
-        self.ironarmor = ironarmor
-        self.chainarmor = chainarmor
-
-class magic:
-    def __init__(self, fire, ice, water, earth, void, light, dark, electric, necromancy, goddess, demon,):
-        self.fire = fire
-        self.ice = ice
-        self.water = water
-        self.earth = earth
-        self.void = void
-        self.light = light
-        self.dark = dark
-        self.electric = electric
-        self.necromancy = necromancy
-        self.goddess = goddess
-        self.demon = demon
-
-# These are the item = money exchange rate.
-item_values = {
-    'cqc weapons': {
-        'longsword': '',
-        'mace': '',
-        'shortsword': '',
-        'dagger': '',
-        'staff': '',
-    },
-    'defensive items': {
-        'short shield': '',
-        'tall shield': '',
-
-    },
-    'ranged weapons': {
-
-    },
-    'animal drops': {
-        'boar hide': 5
-    },
-    'monster drops': {
-
-    },
-    'mineral drops': {
-
-    },
-
-}
-
 print("\n___Introduction___")
 print(f"\nYour name is {player_name.title()}, and your gender is {gender}. You will begin your journey"
       f"in this new world. \nPlease make careful choices as it will affect the course of the story.")
@@ -119,7 +71,9 @@ print(f"\nYour name is {player_name.title()}, and your gender is {gender}. You w
 print("\n\n___Chapter 1: Awakening___\nYou wake up inside of a tomb. You wake up confused not knowing what is going on."
       "\nYou get out of your coffin only to see a wooden door at the end of the room.")
 
+# This is the first part of the story which entails waking up and getting out of the tomb.
 tomb_event = True
+# Choices here involve user input and if statements to distinguish user input.
 while tomb_event:
     tomb_door = input("Do you open it? (yes/no) ")
     if tomb_door == 'yes':
