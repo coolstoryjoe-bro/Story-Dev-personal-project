@@ -4,6 +4,8 @@
 # TODO: Change player inventory to a dictionary with weapon classes and item classes.
 # TODO: Review the code to include player inventory dictionary.
 
+# This is the player class that has all the attributes and definitions of the player:
+import player
 # Import the passiveDamage class module which contains all the passive damages to the player character.
 import passiveDamage
 # Import the available options for chapter 1.
@@ -31,6 +33,7 @@ player_lname = input_lname
 #This contains the player name and gender along with the inventory and status.
 player_0 = [gender, player_name]
 player_inventory = []
+player_useable_inventory = []
 player_status = {}
 gender.append(input_gender)
 
@@ -38,24 +41,6 @@ gender.append(input_gender)
 # Each option is different according to the story and what the player chooses.
 
 #This the the player class which contains the player health and number statistics.
-class player:
-    def __init__(self):
-        self.player = player_0
-        self.player_health = 100
-        self.player_defense = 10
-        self.player_hitrate = 10
-
-class playerCondition(player):
-    """This class simply describes the condition of the player."""
-    def __init__(self, player, health, defense, player_hitrate):
-        """Initialize attributes of the parent class."""
-        super().__init__(player, health, defense, player_hitrate)
-
-class playerStatus(player):
-    """This is the status of the player. """
-    def __init__(self, player, health, defense, player_hitrate):
-        """Initialize attributes of the parent class."""
-        super().__init__(player, health, defense, player_hitrate)
 
 # A short list of the CQC weapons that i've listed in chapter one.
 CQC_Weapons = ['longsword', 'mace', 'shortsword', 'dagger', 'punches', 'kicks', 'kitchenknife', 'treebranch', 'pan',
