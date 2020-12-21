@@ -12,9 +12,17 @@ class longBow(rangedWeapons):
     def __init__(self, attack_dmg, attack_range, attack_rate, status_effect):
         super().__init__(attack_dmg, attack_range, attack_rate, status_effect)
 
-        self.attack_dmg = 35
-        self.attack_rate = 7
-        self.attack_range = 100
+        self.LongBow = [self.attack_dmgLB, self.attack_rateLB, self.attack_rangeLB]
+        self.attack_dmgLB = 35
+        self.attack_rateLB = 7
+        self.attack_rangeLB = 100
+
+    def equip_longBow(self):
+        player_useable_inventory.append(self.LongBow)
+
+    def unequip_longBow(self):
+        player_useable_inventory.remove(self.LongBow)
+        player_inventory.append(self.LongBow)
 
     def use_longBow(self):
         self.arrow_vary = input("Would you like to use an arrow effect? (yes/no)")
@@ -37,9 +45,9 @@ class shortBow(rangedWeapons):
     def __init__(self, attack_dmg, attack_range, attack_rate, status_effect):
         super().__init__(attack_dmg, attack_range, attack_rate, status_effect)
 
-        self.attack_dmg = 15
-        self.attack_rate = 3
-        self.attack_range = 50
+        self.attack_dmgSB = 15
+        self.attack_rateSB = 3
+        self.attack_rangeSB = 50
 
     def use_shortBow(self):
         self.arrow_vary = input("Would you like to use an arrow effect? (yes/no)")
@@ -62,9 +70,9 @@ class crossBow(rangedWeapons):
     def __init__(self, attack_dmg, attack_range, attack_rate, status_effect):
         super().__init__(attack_dmg, attack_range, attack_rate, status_effect)
 
-        self.attack_dmg = 50
-        self.attack_rate = 15
-        self.attack_range = 150
+        self.attack_dmgCB = 50
+        self.attack_rateCB = 15
+        self.attack_rangeCB = 150
 
     def use_crossBow(self):
         self.arrow_vary = input("Would you like to use an arrow effect? (yes/no)")
@@ -87,9 +95,9 @@ class thrownRock(rangedWeapons):
     def __init__(self, attack_dmg, attack_range, attack_rate, status_effect):
         super().__init__(attack_dmg, attack_range, attack_rate, status_effect)
 
-        self.attack_dmg = 2
-        self.attack_rate = 3
-        self.attack_range = 5
+        self.attack_dmgR = 2
+        self.attack_rateR = 3
+        self.attack_rangeR = 5
 
     def use_thrownRock(self):
         print(f"You have chosen to throw a rock to deal a total of {self.attack_dmg} damage!")
@@ -98,9 +106,9 @@ class musket(rangedWeapons):
     def __init__(self, attack_dmg, attack_range, attack_rate, status_effect):
         super().__init__(attack_dmg, attack_range, attack_rate, status_effect)
 
-        self.attack_dmg = 35
-        self.attack_rate = 7
-        self.attack_range = 100
+        self.attack_dmgM = 35
+        self.attack_rateM = 7
+        self.attack_rangeM = 100
 
     def use_musket(self):
         self.bullet_vary = input("Would you like to use an bullet effect? (yes/no)")
