@@ -32,14 +32,49 @@ class Player:
 
         }]
 
-        cqc_weapons = [{'long swords': ['Basic Long Sword']},
-                       {'short swords': ['Basic Short Sword']},
-                       ]
+    def equip_cqcweapon(self):
+        for weapons in range(len(self.player_inventory_cqc)):
+            for weapon_names in self.player_inventory_cqc[weapons]:
+                print(self.player_inventory_cqc[weapons][weapon_names])
+        equip_input = input(f"Which weapon would you like to use for CQC? ")
+        if equip_input == '':
+            self.equipped_inventory['CQC Weapon'] = ''
+        elif equip_input == '':
+            self.equipped_inventory['CQC Weapon'] = ''
+        elif equip_input == '':
+            self.equipped_inventory['CQC Weapon'] = ''
+        elif equip_input == '':
+            self.equipped_inventory['CQC Weapon'] = ''
+        elif equip_input == '':
+            self.equipped_inventory['CQC Weapon'] = ''
+        elif equip_input == '':
+            self.equipped_inventory['CQC Weapon'] = ''
+        elif equip_input == '':
+            self.equipped_inventory['CQC Weapon'] = ''
+        elif equip_input == '':
+            self.equipped_inventory['CQC Weapon'] = ''
+        elif equip_input == '':
+            self.equipped_inventory['CQC Weapon'] = ''
+        elif equip_input == '':
+            self.equipped_inventory['CQC Weapon'] = ''
+        elif equip_input == '':
+            self.equipped_inventory['CQC Weapon'] = ''
+        elif equip_input == '':
+            self.equipped_inventory['CQC Weapon'] = ''
+        elif equip_input == '':
+            self.equipped_inventory['CQC Weapon'] = ''
+        elif equip_input == '':
+            self.equipped_inventory['CQC Weapon'] = ''
+        elif equip_input == '':
+            self.equipped_inventory['CQC Weapon'] = ''
+        elif equip_input == '':
+            self.equipped_inventory['CQC Weapon'] = ''
+        elif equip_input == '':
+            self.equipped_inventory['CQC Weapon'] = ''
+        elif equip_input == '':
+            self.equipped_inventory['CQC Weapon'] = ''
 
-    def equip_cqcWeapon(self):
-        self.equipped_inventory['CQC Weapon'] = ''
-
-    def unequip_cqcWeapon(self):
+    def unequip_cqcweapon(self):
         self.unequipped_cqcWeapon = self.equipped_inventory.pop[-2]('')
         for weapons in range(len(cqc_weapons)):
             for weapon_names in cqc_weapons[weapons]:
@@ -59,7 +94,6 @@ class Player:
                     self.player_inventory_cqc[0]['Maces'] = [f'{self.unequipped_cqcWeapon}']
                     break
 
-
     def use_equipped_cqcWeapon(self):
         if self.weapon_type == 'staff':
             self.enemy_health -= self.base_damage * 2
@@ -70,24 +104,3 @@ class Player:
         elif self.weapon_type == 'longSword' or self.weapon_type == 'mace':
             self.enemy_health -= self.base_damage
         print(f"You have done {self.base_damage} damage!")
-
-
-
-# class player:
-#     def __init__(self, player_health=100, player_defense=10, player_hitrate=10):
-#         self.player = player_0
-#         self.player_health = player_health
-#         self.player_defense = player_defense
-#         self.player_hitrate = player_hitrate
-#
-# class playerCondition(player):
-#     """This class simply describes the condition of the player."""
-#     def __init__(self, player, health, defense, player_hitrate):
-#         """Initialize attributes of the parent class."""
-#         super().__init__(player, health, defense, player_hitrate)
-#
-# class playerStatus(player):
-#     """This is the status of the player. """
-#     def __init__(self, player, health, defense, player_hitrate):
-#         """Initialize attributes of the parent class."""
-#         super().__init__(player, health, defense, player_hitrate)
