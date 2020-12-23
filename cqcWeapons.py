@@ -5,22 +5,11 @@ class cqcWeapons:
         self.base_durability = base_durability
         self.weapon_type = weapon_type
 
-    def equip_cqcWeapon(self):
-        print('')
-
-    def unequip_cqcWeapon(self):
-        print('')
-
-    def use_equipped_cqcWeapon(self):
-        if self.weapon_type == 'shortSword':
-            self.enemy_health -= self.base_damage * 2
-        elif self.base_hitrate > 20:
-            self.enemy_health -= self.base_damage * 3
-        elif self.base_hitrate > 30:
-            self.enemy_health -= self.base_damage * 4
-        else:
-            self.enemy_health -= self.base_damage
-        print(f"You have done {self.base_damage} damage!")
+cqc_weapons = [{'long swords': ['Basic Long Sword', 'Iron Long Sword']},
+                       {'short swords': ['Basic Short Sword']},
+               {'Staffs': ['Wooden Staff']}
+                       ]
+long_swords = ['Basic Long Sword', 'Iron Long Sword']
 
 # class longSword(cqcWeapons):
 #     """Status for longsword"""
