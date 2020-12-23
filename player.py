@@ -5,17 +5,47 @@ class Player:
         self.player_hit_rate = hit_rate
         self.player_speed = speed
         self.player_damage = damage
+        self.player_inventory_cqc = {
+            'Long Swords': '',
+            'Short Swords': '',
+            'Daggers': '',
+            'Staffs': '',
+            'Mace': '',
+
+
+        }
+        self.equipped_inventory = {
+            'Head': '',
+            'Body': '',
+            'Legs': '',
+            'Feet': '',
+            'Arms': '',
+            'Hands': '',
+            'CQC Weapon': '',
+            'Ranged Weapon': '',
+
+        }
+
+    def equip_cqcWeapon(self):
+        self.equipped_inventory['CQC Weapon'] = ''
+
+    def unequip_cqcWeapon(self):
+        self.equipped_inventory['CQC Weapon'] = ''
+        if 
+        self.player_inventory_cqc['']
+
 
     def use_equipped_cqcWeapon(self):
-        if self.base_hitrate > 10:
+        if self.weapon_type == 'staff':
             self.enemy_health -= self.base_damage * 2
-        elif self.base_hitrate > 20:
+        elif self.weapon_type == 'shortSword':
             self.enemy_health -= self.base_damage * 3
-        elif self.base_hitrate > 30:
+        elif self.weapon_type == 'dagger':
             self.enemy_health -= self.base_damage * 4
-        else:
+        elif self.weapon_type == 'longSword' or self.weapon_type == 'mace':
             self.enemy_health -= self.base_damage
         print(f"You have done {self.base_damage} damage!")
+
 
 
 
